@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>情報セキュリティ レポート課題2答え合わせ</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h1>計算結果</h1>
+        </div>
+        <div class="page-header">
+            <h2>平文</h2>
+        </div>
+        <table class="table table-bordered">
+            <tr>
+                <th>入力された学籍番号</th>
+                <td>{{ ary['inputStudentId']}}</td>
+            </tr>
+            <tr>
+                <th>平文mの値(学籍番号から導かれる値が536の場合は535に変更される)</th>
+                <td>{{ ary['m'] }}</td>
+            </tr>
+        </table>
+
+        <div class="page-header">
+            <h2>それぞれの値</h2>
+        </div>
+        <table class="table table-bordered">
+            <tr>
+                <th>λ(n)</th>
+                <td>{{ ary['lamdaN'] }}</td>
+            </tr>
+            <tr>
+                <th>eに設定された値(取り得る値のなかから1を除いた最小のもの)</th>
+                <td>{{ ary['e'] }}</td>
+            </tr>
+            <tr>
+                <th>d(秘密鍵)</th>
+                <td>{{ ary['d'] }}</td>
+            </tr>
+            <tr>
+                <th>n</th>
+                <td>{{ ary['n'] }}</td>
+            </tr>
+            <tr>
+                <th>c(暗号文)</th>
+                <td>{{ ary['c'] }}</td>
+            </tr>
+        </table>
+        <div class="page-header">
+            <h2>途中計算</h2>
+        </div>
+        <h3>暗号化</h3>
+        <pre>
+{{ ary['m_e'] }}
+        </pre>
+        <h3>複合化</h3>
+        <pre>
+{{ ary['c_d'] }}
+        </pre>
+        <hr>
+        <a href="/">トップに戻る</a>
+    </div>
+</body>
+</html>

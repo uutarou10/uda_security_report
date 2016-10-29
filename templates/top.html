@@ -1,0 +1,49 @@
+<!--
+
+
+ｷﾀ━(・∀・)━!!!!ｷﾀ━(・∀・)━!!!!
+
+課題に疲れたら/udaにアクセスしてみよう！
+元気が出るよ！！（多分）
+
+ｷﾀ━(・∀・)━!!!!ｷﾀ━(・∀・)━!!!!
+
+
+-->
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>情報セキュリティ 第2回レポート答え合わせツール</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>情報セキュリティ　第2回レポート答え合わせツール</h1>
+        <p class="lead">検証はしたつもりですが、答えの正確性は保障しません。<br><a href="http://fire.cs.priv.teu.ac.jp/~uda/security/lecture/lecture6.pdf" target="_blank">2016年の課題</a>に準拠しています。</p>
+	<div class="alert alert-warning" role="alert">平文mと暗号文cが同じ答えになったりしてる人が居る模様です。<br>
+	正直、その答えがあっているか不安になってきたので気休め程度に使ってください。<br>
+明らかなバグを発見したときはこっそり教えてくれると大変助かります。</div>
+        <hr>
+        <form method="post" action="/result">
+            <div class="form-group">
+                <label for="studentId">学籍番号(アルファベットを除く数字部分)</label>
+                <input type="text" name="stdId" class="form-control" placeholder="011xxxx">
+            </div>
+            <div class="form-group">
+                <label for="p">pの値</label>
+                <input type="text" name="p" class="form-control" value="19">
+            </div>
+            <div class="form-group">
+                <label for="q">qの値</label>
+                <input type="text" name="q" class="form-control" value="31">
+            </div>
+            <button type="submit" class="btn btn-default">計算</button>
+        </form>
+    </div>
+</body>
+</html>
